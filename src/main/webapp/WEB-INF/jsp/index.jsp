@@ -3,10 +3,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -24,14 +21,17 @@
 	<div id="navContainer" class="container">
 		<ul class="nav nav-pills">
 			<li><a href="#redirection" data-toggle="tab"
-				onclick="$('#mainContent').load('redirections');">Redirection</a></li>
+				onclick="$('#mainContent').load('/management/redirection');">Redirection</a></li>
 			<li><a href="#compteurLike" data-toggle="tab"
-				onclick="$('#mainContent').load('compteurDeLike');">Compteur
+				onclick="$('#mainContent').load('/management/compteurDeLike');">Compteur
 					De Like</a></li>
 		</ul>
 
 		<div class="tab-pane" id="mainContent"></div>
 	</div>
 </body>
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </html>

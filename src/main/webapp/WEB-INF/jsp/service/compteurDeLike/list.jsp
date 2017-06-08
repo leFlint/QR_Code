@@ -13,17 +13,14 @@
 	<tbody>
 		<c:forEach items="${compteurDeLikes}" var="compteurDeLike">
 			<tr>
-				<td><a href="/compteurDeLike/view/${compteurDeLike.id}"
-					target="_blank">${compteurDeLike.sentence}</a></td>
-				<td><c:set var="baseURL"
-						value="${fn:replace(pageContext.request.requestURL, pageContext.request.requestURI, pageContext.request.contextPath)}" />
-
-					<c:set var="urlToShare">
-						<c:url value="${baseURL}/compteurDeLike/view/${compteurDeLike.id}"></c:url>
-					</c:set> <img alt="QRCode" src="${qrcode:generate(urlToShare)}" /></td>
-				<td>
-					<span>${compteurDeLike.nbLike}</span>
-				</td>
+				<c:set var="baseURL"
+					value="${fn:replace(pageContext.request.requestURL, pageContext.request.requestURI, pageContext.request.contextPath)}" />
+				<c:set var="urlToShare">
+					<c:url value="${baseURL}/compteurDeLike/view/${compteurDeLike.id}"></c:url>
+				</c:set>
+				<td><a href="${urlToShare}" target="_blank">${compteurDeLike.sentence}</a></td>
+				<td><img alt="QRCode" src="${qrcode:generate(urlToShare)}" /></td>
+				<td><span>${compteurDeLike.nbLike}</span></td>
 			</tr>
 		</c:forEach>
 	</tbody>

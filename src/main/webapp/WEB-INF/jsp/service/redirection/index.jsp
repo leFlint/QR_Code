@@ -3,10 +3,10 @@
 </div>
 <div id="redirectionContent" class="container">
 	<ul class="nav nav-pills">
+		<li><a href="#" data-toggle="tab" id ="listeTab"
+			onclick="$('#content').load('management/redirection/list');">Lister</a></li>
 		<li><a href="#" data-toggle="tab"
-			onclick="$('#content').load('redirections/list');">Lister</a></li>
-		<li><a href="#" data-toggle="tab"
-			onclick="$('#content').load('redirections/form');">Créer</a></li>
+			onclick="$('#content').load('management/redirection/form');">Créer</a></li>
 	</ul>
 
 	<div class="tab-pane" id="content"></div>
