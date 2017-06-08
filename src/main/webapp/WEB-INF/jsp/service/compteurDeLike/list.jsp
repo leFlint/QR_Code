@@ -16,7 +16,7 @@
 				<c:set var="baseURL"
 					value="${fn:replace(pageContext.request.requestURL, pageContext.request.requestURI, pageContext.request.contextPath)}" />
 				<c:set var="urlToShare">
-					<c:url value="${baseURL}/compteurDeLike/view/${redirection.id}"></c:url>
+					<c:url value="${baseURL}/compteurDeLike/view/${compteurDeLike.id}"></c:url>
 				</c:set>
 				<td><a href="${urlToShare}" target="_blank">${compteurDeLike.sentence}</a></td>
 				<td><img alt="QRCode" src="${qrcode:generate(urlToShare)}" /></td>

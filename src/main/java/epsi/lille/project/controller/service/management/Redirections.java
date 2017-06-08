@@ -1,5 +1,6 @@
 package epsi.lille.project.controller.service.management;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,12 +8,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import epsi.lille.project.ProjectApplication;
 import epsi.lille.project.controller.service.AbstractServiceController;
 import epsi.lille.project.controller.service.constantes.Pages;
 import epsi.lille.project.controller.service.constantes.URL;
 import epsi.lille.project.model.Redirection;
 
 @Controller
+@PreAuthorize("hasRole('" + ProjectApplication.SERVICE_CREATOR_ROLE + "')")
 public class Redirections extends AbstractServiceController {
 
 	@PostMapping(URL.REDIRECTIONS_MANAGEMENT_ROOT)

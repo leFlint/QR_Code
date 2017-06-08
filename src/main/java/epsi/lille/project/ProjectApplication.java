@@ -14,6 +14,8 @@ import epsi.lille.project.controller.service.constantes.URL;
 @SpringBootApplication
 public class ProjectApplication {
 
+	public static final String SERVICE_CREATOR_ROLE = "SERVICE_CREATOR";
+
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectApplication.class, args);
 	}
@@ -32,7 +34,7 @@ public class ProjectApplication {
 		@Autowired
 		public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 			auth.inMemoryAuthentication().withUser("user").password("password")
-					.roles("CREATOR");
+					.roles(SERVICE_CREATOR_ROLE);
 		}
 	}
 }
