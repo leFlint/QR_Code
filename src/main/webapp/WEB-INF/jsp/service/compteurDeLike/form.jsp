@@ -1,8 +1,8 @@
 <form action="" method="post" id="createForm">
 	<div class="form-group">
-		<label for="compteurDeLikeLink">Compteur de Like</label> <input type="text"
-			name="sentence" id="sentence" class="form-control" id="compteurDeLikeLink"
-			placeholder="Dites ce que vous voulez !!">
+		<label for="compteurDeLikeLink">Compteur de Like</label> <input
+			type="text" name="sentence" id="sentence" class="form-control"
+			id="compteurDeLikeLink" placeholder="Dites ce que vous voulez !!">
 	</div>
 	<button type="submit" class="btn btn-default">Créer</button>
 </form>
@@ -11,7 +11,7 @@
 	$('#createForm').submit(function(e) {
 		e.preventDefault();
 		$.ajax({
-			url : '/compteurDeLike',
+			url : "management/compteurDeLike",
 			contentType : "application/json",
 			type : 'post',
 			data : JSON.stringify({

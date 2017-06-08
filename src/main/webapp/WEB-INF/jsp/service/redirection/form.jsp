@@ -11,7 +11,7 @@
 	$('#createForm').submit(function(e) {
 		e.preventDefault();
 		$.ajax({
-			url : '/redirections',
+			url : "management/redirection",
 			contentType : "application/json",
 			type : 'post',
 			data : JSON.stringify({
