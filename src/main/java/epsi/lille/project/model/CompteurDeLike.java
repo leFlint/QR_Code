@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Bean pour le compteur de like
+ */
 @Entity
 public class CompteurDeLike {
 

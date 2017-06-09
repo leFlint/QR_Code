@@ -18,28 +18,45 @@ import epsi.lille.project.model.CompteurDeLike;
 @PreAuthorize("hasRole('" + ProjectApplication.SERVICE_CREATOR_ROLE + "')")
 public class CompteurDeLikeController extends AbstractServiceController {
 
+	/**
+	 *cree un service compteur de like
+	 * @param compteurDeLike
+	 * @return
+	 */
 	@PostMapping(URL.COMPTEUR_DE_LIKES_MANAGEMENT_ROOT)
 	@ResponseBody
-	CompteurDeLike compteurDeLikePost(@RequestBody CompteurDeLike compteurDeLike) {
-		repo.save(compteurDeLike);
+	public CompteurDeLike compteurDeLikePost(@RequestBody CompteurDeLike compteurDeLike) {
+		repository.save(compteurDeLike);
 		return compteurDeLike;
 	}
 
+	/**
+	 *acceder à la page d'index du service Compteur de Like
+	 * @return
+	 */
 	@GetMapping(URL.COMPTEUR_DE_LIKES_MANAGEMENT_ROOT)
-	ModelAndView compteurDeLike() {
+	public ModelAndView compteurDeLike() {
 		ModelAndView mav = new ModelAndView(Pages.COMPTEUR_DE_LIKES_INDEX_PAGE);
 		return mav;
 	}
 
+	/**
+	 *acceder a la liste des compteur créées
+	 * @return
+	 */
 	@GetMapping(URL.COMPTEUR_DE_LIKES_LIST)
-	ModelAndView compteurDeLikeList() {
+	public ModelAndView compteurDeLikeList() {
 		ModelAndView mav = new ModelAndView(Pages.COMPTEUR_DE_LIKES_LIST_PAGE);
-		mav.getModel().put("compteurDeLikes", repo.findAll(CompteurDeLike.class));
+		mav.getModel().put("compteurDeLikes", repository.findAll(CompteurDeLike.class));
 		return mav;
 	}
 
+	/**
+	 *acceder au formulaire de creation compteur de like
+	 * @return
+	 */
 	@GetMapping(URL.COMPTEUR_DE_LIKES_CREATE)
-	String compteurDeLikeForm() {
+	public String compteurDeLikeForm() {
 		return Pages.COMPTEUR_DE_LIKES_CREATE_PAGE;
 	}
 }

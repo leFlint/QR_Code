@@ -14,16 +14,26 @@ import epsi.lille.project.model.CompteurDeLike;
 @Controller
 public class CompteurDeLikeServiceController extends AbstractServiceController {
 
+	/**
+	 *controller partie front qui permet a l'utilisateur de voir le service
+	 * @param id
+	 * @return
+	 */
 	@GetMapping(URL.COMPTEUR_DE_LIKES_VIEW_URL)
-	ModelAndView compteurDeLikeView(@PathVariable Integer id) {
+	public ModelAndView compteurDeLikeView(@PathVariable Integer id) {
 		ModelAndView mav = new ModelAndView(Pages.COMPTEUR_DE_LIKES_VIEW_PAGE);
-		mav.getModel().put("compteurDeLike", repo.find(CompteurDeLike.class, id));
+		mav.getModel().put("compteurDeLike", repository.find(CompteurDeLike.class, id));
 		return mav;
 	}
 
+	/**
+	 *controller partie front qui permet a l'utilisateur d'utiliser le service
+	 * @param id
+	 * @return
+	 */
 	@PostMapping(URL.COMPTEUR_DE_LIKES_DO_LIKE_URL)
 	@ResponseBody
-	Integer compteurDeLikeLike(@PathVariable Integer id) {
-		return repo.doLikeASentence(id).getNbLike();
+	public Integer compteurDeLikeLike(@PathVariable Integer id) {
+		return repository.doLikeASentence(id).getNbLike();
 	}
 }

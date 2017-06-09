@@ -12,10 +12,15 @@ import epsi.lille.project.model.Redirection;
 @Controller
 public class RedirectionServiceController extends AbstractServiceController {
 
+	/**
+	 *controller partie front qui permet a l'utilisateur de voir le service
+	 * @param id
+	 * @return
+	 */
 	@GetMapping(URL.REDIRECTIONS_VIEW_URL)
-	ModelAndView redirectionsView(@PathVariable Integer id) {
+	public ModelAndView redirectionsView(@PathVariable Integer id) {
 		ModelAndView mav = new ModelAndView(Pages.REDIRECTIONS_VIEW_PAGE);
-		mav.getModel().put("redirection", repo.find(Redirection.class, id));
+		mav.getModel().put("redirection", repository.find(Redirection.class, id));
 		return mav;
 	}
 }
